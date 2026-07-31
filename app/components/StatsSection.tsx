@@ -41,18 +41,20 @@ export default function StatsSection() {
           <h2 className="heading-md">Impact & Expertise</h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-4 sm:grid-cols-2">
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="animated-border rounded-xl p-8 text-center hover:scale-105 transition-transform duration-300"
-              style={{ animationDelay: `${i * 0.5}s` }}
+              className="card animated-border text-center group hover:scale-105 transition-transform duration-300 flex flex-col items-center justify-center"
+              style={{ animationDelay: `${i * 0.1}s`, minHeight: '140px' }}
             >
-              <div className="stat-number mb-3">
+              <div className="stat-number mb-3 text-3xl font-bold">
                 {stat.value}
-                <span className="text-2xl">{stat.suffix}</span>
+                <span className="text-lg ml-1">{stat.suffix}</span>
               </div>
-              <p className="text-zinc-400 font-medium">{stat.label}</p>
+              <p className="text-zinc-400 font-medium group-hover:text-zinc-300 transition-colors">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>

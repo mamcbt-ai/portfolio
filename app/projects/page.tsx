@@ -54,23 +54,23 @@ export default function ProjectsPage() {
                     >
                       {/* Featured Badge */}
                       {project.featured && (
-                        <div className="mb-4">
-                          <span className="inline-block px-3 py-1 text-xs font-bold text-amber-300 bg-gradient-to-r from-amber-500/20 to-orange-500/10 border border-amber-500/30 rounded-full">
+                        <div className="mb-5">
+                          <span className="inline-block px-3 py-1.5 text-xs font-bold text-amber-300 bg-gradient-to-r from-amber-500/25 to-orange-500/15 border border-amber-500/40 rounded-lg">
                             ⭐ Featured
                           </span>
                         </div>
                       )}
 
                       {/* Title & Tagline */}
-                      <h3 className="mb-3 text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
+                      <h3 className="mb-3 text-lg font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
                         {project.title}
                       </h3>
-                      <p className="mb-4 text-base font-medium text-zinc-300">
+                      <p className="mb-4 text-sm font-medium text-zinc-300 group-hover:text-zinc-200 transition-colors">
                         {project.tagline}
                       </p>
 
                       {/* Description */}
-                      <p className="mb-6 text-sm text-zinc-400 flex-grow">
+                      <p className="mb-6 text-sm text-zinc-400 group-hover:text-zinc-300 flex-grow leading-relaxed transition-colors">
                         {project.description}
                       </p>
 
@@ -79,7 +79,7 @@ export default function ProjectsPage() {
                         <ul className="mb-6 space-y-2 text-xs text-zinc-300">
                           {project.highlights.slice(0, 3).map((highlight, i) => (
                             <li key={i} className="flex gap-2">
-                              <span className="text-blue-400 font-bold mt-0.5">✓</span>
+                              <span className="text-blue-400 font-bold mt-0.5 group-hover:text-purple-400 transition-colors">✓</span>
                               <span>{highlight}</span>
                             </li>
                           ))}
@@ -98,28 +98,28 @@ export default function ProjectsPage() {
                         ))}
                         {project.stack.length > 4 && (
                           <span className="badge text-xs">
-                            +{project.stack.length - 4} more
+                            +{project.stack.length - 4}
                           </span>
                         )}
                       </div>
 
                       {/* Links */}
-                      <div className="flex flex-wrap gap-3 pt-4 border-t border-zinc-700/50 mt-auto">
+                      <div className="flex flex-wrap gap-3 pt-5 border-t border-zinc-700/40 mt-auto">
                         {project.liveUrl && (
                           <a
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xs btn-secondary py-2 px-4 flex-1"
+                            className="text-xs btn-secondary py-2 px-4 flex-1 text-center"
                           >
-                            🚀 Live App
+                            🚀 Live
                           </a>
                         )}
                         <Link
                           href={`/#featured-projects`}
-                          className="text-xs btn-secondary py-2 px-4 flex-1"
+                          className="text-xs btn-secondary py-2 px-4 flex-1 text-center"
                         >
-                          👁️ View Details
+                          👁️ Details
                         </Link>
                       </div>
                     </div>

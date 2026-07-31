@@ -52,21 +52,29 @@ export default function TechStackShowcase() {
           ))}
         </div>
 
-        {/* Quick Facts */}
-        <div className="mt-20 grid gap-6 md:grid-cols-3">
+        {/* Quick Facts - Professional cards */}
+        <div className="mt-20 grid gap-8 md:grid-cols-3">
           {[
-            { emoji: '⚡', text: 'Optimized for performance', desc: '90+ PageSpeed scores' },
-            { emoji: '🔒', text: 'Security-first approach', desc: 'Best practices always' },
-            { emoji: '📱', text: 'Mobile-first design', desc: 'Works on all devices' },
+            { emoji: '⚡', text: 'Optimized Performance', desc: '90+ PageSpeed scores' },
+            { emoji: '🔒', text: 'Security-First', desc: 'Best practices always' },
+            { emoji: '📱', text: 'Mobile-Ready', desc: 'Works on all devices' },
           ].map((fact, i) => (
             <div
               key={i}
-              className="card text-center"
+              className="card group flex flex-col items-center text-center hover:shadow-xl"
               style={{ animationDelay: `${i * 0.15}s` }}
             >
-              <div className="text-4xl mb-3">{fact.emoji}</div>
-              <h4 className="font-bold text-white mb-2">{fact.text}</h4>
-              <p className="text-sm text-zinc-400">{fact.desc}</p>
+              <div className="icon-wrapper mb-6 group-hover:mb-8 transition-all">
+                <span className="text-2xl group-hover:scale-110 transition-transform duration-300 inline-block">
+                  {fact.emoji}
+                </span>
+              </div>
+              <h4 className="font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
+                {fact.text}
+              </h4>
+              <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                {fact.desc}
+              </p>
             </div>
           ))}
         </div>

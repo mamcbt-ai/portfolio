@@ -69,14 +69,20 @@ export default function Home() {
                   "LLM integrations, RAG systems, multilingual workflows, voice AI, OCR, and ML pipelines for real products.",
               },
             ].map((service, i) => (
-              <div key={i} className="card group" style={{animationDelay: `${i * 0.1}s`}}>
-                <div className="icon-wrapper mb-6">
-                  <span className="text-3xl">{service.icon}</span>
+              <div
+                key={i}
+                className="card group flex flex-col h-full"
+                style={{animationDelay: `${i * 0.1}s`}}
+              >
+                <div className="icon-wrapper mb-6 group-hover:mb-8 transition-all">
+                  <span className="text-3xl group-hover:scale-110 transition-transform duration-300 inline-block">
+                    {service.icon}
+                  </span>
                 </div>
-                <h3 className="mb-3 font-bold text-white text-lg">
+                <h3 className="mb-3 font-bold text-white text-lg group-hover:text-blue-300 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                <p className="text-sm text-zinc-400 group-hover:text-zinc-200 transition-colors flex-grow leading-relaxed">
                   {service.description}
                 </p>
               </div>
