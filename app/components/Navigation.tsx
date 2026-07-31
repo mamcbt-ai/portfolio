@@ -20,14 +20,14 @@ export default function Navigation() {
 
   return (
     <nav aria-label="Primary navigation">
-      <ul className="flex items-center gap-6 text-sm text-zinc-300">
+      <ul className="flex items-center gap-8 text-sm text-zinc-300">
         {navLinks.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
-              className={`transition ${
+              className={`nav-link relative px-1 py-2 font-medium transition-all duration-300 ${
                 isActive(link.href)
-                  ? 'text-white font-semibold border-b-2 border-white pb-1'
+                  ? 'active text-white'
                   : 'hover:text-white'
               }`}
             >
@@ -38,7 +38,7 @@ export default function Navigation() {
         <li>
           <a
             href="mailto:mamcbt@gmail.com"
-            className="inline-flex items-center rounded-lg border border-zinc-700 px-4 py-2 font-medium text-zinc-200 transition hover:border-zinc-500 hover:text-white"
+            className="btn-secondary text-sm"
           >
             Contact
           </a>
