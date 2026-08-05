@@ -2,6 +2,8 @@ import Link from "next/link";
 import { projects } from "@/lib/projects";
 import StatsSection from "./components/StatsSection";
 import TechStackShowcase from "./components/TechStackShowcase";
+import PricingSection from "./components/PricingSection";
+import ProcessSection from "./components/ProcessSection";
 
 export default function Home() {
   const featuredProjects = projects.filter((p) => p.featured);
@@ -93,6 +95,9 @@ export default function Home() {
 
       {/* Stats Section */}
       <StatsSection />
+
+      {/* Pricing Section */}
+      <PricingSection />
 
       {/* Featured Projects */}
       <section id="featured-projects" className="section-padding border-b border-zinc-800/50">
@@ -190,6 +195,9 @@ export default function Home() {
       {/* Tech Stack Showcase */}
       <TechStackShowcase />
 
+      {/* How I Work / Process Section */}
+      <ProcessSection />
+
       {/* All Projects CTA */}
       <section className="relative section-padding border-b border-zinc-800/50">
         <div className="absolute inset-0 -z-10">
@@ -255,22 +263,80 @@ export default function Home() {
           <div className="absolute top-0 left-1/3 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
         </div>
-        <div className="container-max text-center">
-          <h2 className="heading-md mb-6">Ready to Build?</h2>
-          <p className="mb-12 text-zinc-300 text-lg">
-            Let's discuss your project, timeline, and vision.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="mailto:mamcbt@gmail.com" className="btn-primary text-base">
-              Email: mamcbt@gmail.com
+        <div className="container-max">
+          <div className="text-center mb-16">
+            <h2 className="heading-md mb-6">Let's Talk</h2>
+            <p className="mb-4 text-zinc-300 text-lg">
+              Choose your preferred way to reach out. I'll respond within 24 hours.
+            </p>
+            <a href="/free-audit" className="text-blue-400 hover:text-blue-300 underline text-sm">
+              → Schedule a free 30-minute project audit
             </a>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
+            {/* Email */}
+            <a
+              href="mailto:mamcbt@gmail.com"
+              className="card group hover:border-blue-500/50 transition-all"
+            >
+              <div className="text-3xl mb-4">📧</div>
+              <h3 className="font-semibold text-white mb-2">Email</h3>
+              <p className="text-sm text-zinc-400 mb-4 flex-grow">
+                For detailed project inquiries
+              </p>
+              <p className="text-xs text-blue-400 group-hover:text-blue-300">
+                mamcbt@gmail.com →
+              </p>
+            </a>
+
+            {/* WhatsApp */}
             <a
               href="https://wa.me/918590841024"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary text-base"
+              className="card group hover:border-green-500/50 transition-all"
             >
-              WhatsApp
+              <div className="text-3xl mb-4">💬</div>
+              <h3 className="font-semibold text-white mb-2">WhatsApp</h3>
+              <p className="text-sm text-zinc-400 mb-4 flex-grow">
+                Quick conversations & updates
+              </p>
+              <p className="text-xs text-green-400 group-hover:text-green-300">
+                +91 8590 841024 →
+              </p>
+            </a>
+
+            {/* Calendar */}
+            <a
+              href="https://calendly.com/mamcbt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card group hover:border-purple-500/50 transition-all"
+            >
+              <div className="text-3xl mb-4">📅</div>
+              <h3 className="font-semibold text-white mb-2">Schedule Call</h3>
+              <p className="text-sm text-zinc-400 mb-4 flex-grow">
+                15-minute quick chat
+              </p>
+              <p className="text-xs text-purple-400 group-hover:text-purple-300">
+                Book on Calendly →
+              </p>
+            </a>
+
+            {/* Free Audit */}
+            <a
+              href="/free-audit"
+              className="card group hover:border-yellow-500/50 transition-all bg-gradient-to-br from-blue-500/5 to-purple-500/5"
+            >
+              <div className="text-3xl mb-4">🎯</div>
+              <h3 className="font-semibold text-white mb-2">Free Audit</h3>
+              <p className="text-sm text-zinc-400 mb-4 flex-grow">
+                30-min project assessment
+              </p>
+              <p className="text-xs text-yellow-400 group-hover:text-yellow-300 font-medium">
+                Start free audit →
+              </p>
             </a>
           </div>
         </div>
