@@ -33,11 +33,26 @@ export default function FreeAuditPage() {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/audit-signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Error submitting form. Please try again.');
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-    }, 1000);
+    }
   };
 
   if (submitted) {
