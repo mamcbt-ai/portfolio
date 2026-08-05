@@ -259,20 +259,20 @@ export default function FreeAuditPage() {
           <h3 className="text-2xl font-bold text-white">FAQ</h3>
           {[
             {
-              q: 'How long is the audit?',
-              a: 'Exactly 30 minutes. I keep it focused and actionable.',
+              q: "How long is the audit?",
+              a: "Exactly 30 minutes. I keep it focused and actionable.",
             },
             {
-              q: 'What if I need more time?',
-              a: 'If we need deeper work, we can discuss a full project engagement after the audit.',
+              q: "What if I need more time?",
+              a: "If we need deeper work, we can discuss a full project engagement after the audit.",
             },
             {
-              q: 'Do you take notes?',
-              a: 'Yes. You'll receive a summary email within 24 hours with 3-5 specific recommendations and an action plan.',
+              q: "Do you take notes?",
+              a: "Yes. You'll receive a summary email within 24 hours with 3-5 specific recommendations and an action plan.",
             },
             {
-              q: 'What if I don\'t hire you after?',
-              a: 'That\'s totally fine. The goal is to give you genuine value—whether you work with me or not.',
+              q: "What if I don't hire you after?",
+              a: "That's totally fine. The goal is to give you genuine value—whether you work with me or not.",
             },
           ].map((item, i) => (
             <div key={i} className="space-y-3">
