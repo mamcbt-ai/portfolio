@@ -26,7 +26,7 @@ export function Analytics() {
     // Initialize gtag
     window.dataLayer = window.dataLayer || [];
     function gtag(...args: unknown[]) {
-      window.dataLayer.push(arguments);
+      window.dataLayer.push(args as Record<string, unknown>);
     }
     window.gtag = gtag;
     gtag('js', new Date());
