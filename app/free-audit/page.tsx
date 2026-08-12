@@ -1,50 +1,12 @@
-'use client';
-
 import Link from 'next/link';
-import { useState } from 'react';
 import FreeAuditForm from '@/app/components/FreeAuditForm';
 
+export const metadata = {
+  title: 'Free Technical Audit - HODOPHILE',
+  description: 'Get a 30-minute free technical audit of your project with 3-5 actionable recommendations.',
+};
+
 export default function FreeAuditPage() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  if (isSubmitted) {
-    return (
-      <div className="min-h-screen pt-32 pb-16">
-        <div className="container-max max-w-3xl">
-          <div className="space-y-8 mb-16 p-12 bg-green-500/10 border border-green-500/20 rounded-lg">
-            <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-white">✅ Application Received</h2>
-              <p className="text-zinc-300 mb-6">
-                Thank you for applying! I'll review your project and send you a detailed audit report with recommendations within 24 hours.
-              </p>
-
-              <div className="space-y-4 text-sm text-zinc-400">
-                <div className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold">→</span>
-                  <span>Check your email for next steps</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold">→</span>
-                  <span>Audit will include 3-5 specific recommendations tailored to your project</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold">→</span>
-                  <span>You'll receive an action plan with priority levels and implementation tips</span>
-                </div>
-              </div>
-
-              <div className="pt-6">
-                <Link href="/" className="btn-primary inline-block">
-                  Back to Home
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen pt-32 pb-16">
       <div className="container-max max-w-3xl">
@@ -65,7 +27,7 @@ export default function FreeAuditPage() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Form */}
           <div className="md:col-span-2">
-            <FreeAuditForm onSubmitted={() => setIsSubmitted(true)} />
+            <FreeAuditForm />
           </div>
 
           {/* Sidebar Info */}

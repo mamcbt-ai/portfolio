@@ -13,11 +13,7 @@ interface FormData {
   challenges: string;
 }
 
-interface FreeAuditFormProps {
-  onSubmitted: () => void;
-}
-
-export default function FreeAuditForm({ onSubmitted }: FreeAuditFormProps) {
+export default function FreeAuditForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -47,7 +43,7 @@ export default function FreeAuditForm({ onSubmitted }: FreeAuditFormProps) {
 
       if (response.ok) {
         trackAuditApplication();
-        onSubmitted();
+        setIsSubmitted(true);
         setFormData({ name: '', email: '', company: '', projectType: 'web', description: '', currentStatus: 'idea', challenges: '' });
       }
     } catch (error) {
@@ -56,6 +52,18 @@ export default function FreeAuditForm({ onSubmitted }: FreeAuditFormProps) {
       setIsLoading(false);
     }
   };
+
+  if (isSubmitted) {
+    return (
+      <div className="p-8 bg-green-500/10 border border-green-500/20 rounded-lg">
+        <h3 className="text-xl font-bold text-white mb-4">✅ Application Received!</h3>
+        <p className="text-zinc-300 mb-4">
+          Thank you for applying. I'll review your project and send you a detailed audit report with recommendations within 24 hours.
+        </p>
+        <p className="text-sm text-zinc-400">Check your email for next steps.</p>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
