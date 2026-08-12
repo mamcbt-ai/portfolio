@@ -7,25 +7,10 @@ import FreeAuditForm from '@/app/components/FreeAuditForm';
 export default function FreeAuditPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  return (
-    <div className="min-h-screen pt-32 pb-16">
-      <div className="container-max max-w-3xl">
-        {/* Header */}
-        <div className="space-y-6 mb-12">
-          <Link href="/" className="text-blue-400 hover:text-blue-300 text-sm">
-            ← Back to Home
-          </Link>
-
-          <div className="space-y-4">
-            <h1 className="heading-lg">Free 30-Minute Technical Audit</h1>
-            <p className="text-xl text-zinc-300">
-              I'll review your project and provide 3-5 actionable recommendations to improve performance, scalability, or architecture.
-            </p>
-          </div>
-        </div>
-
-        {isSubmitted ? (
-          // Success Screen
+  if (isSubmitted) {
+    return (
+      <div className="min-h-screen pt-32 pb-16">
+        <div className="container-max max-w-3xl">
           <div className="space-y-8 mb-16 p-12 bg-green-500/10 border border-green-500/20 rounded-lg">
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-white">✅ Application Received</h2>
@@ -55,12 +40,33 @@ export default function FreeAuditPage() {
               </div>
             </div>
           </div>
-        ) : (
-          <div className="grid gap-12 md:grid-cols-3">
-            {/* Form */}
-            <div className="md:col-span-2">
-              <FreeAuditForm onSubmitted={() => setIsSubmitted(true)} />
-            </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen pt-32 pb-16">
+      <div className="container-max max-w-3xl">
+        {/* Header */}
+        <div className="space-y-6 mb-12">
+          <Link href="/" className="text-blue-400 hover:text-blue-300 text-sm">
+            ← Back to Home
+          </Link>
+
+          <div className="space-y-4">
+            <h1 className="heading-lg">Free 30-Minute Technical Audit</h1>
+            <p className="text-xl text-zinc-300">
+              I'll review your project and provide 3-5 actionable recommendations to improve performance, scalability, or architecture.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-12 md:grid-cols-3">
+          {/* Form */}
+          <div className="md:col-span-2">
+            <FreeAuditForm onSubmitted={() => setIsSubmitted(true)} />
+          </div>
 
           {/* Sidebar Info */}
           <div className="space-y-6">
@@ -113,20 +119,20 @@ export default function FreeAuditPage() {
               </ul>
             </div>
           </div>
+        </div>
 
-          {/* CTA Back */}
-          <div className="mt-16 pt-16 border-t border-zinc-800 text-center">
-            <p className="text-zinc-400 mb-6">Not ready for audit? Explore other options:</p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/project-brief" className="btn-secondary">
-                Send Project Brief
-              </Link>
-              <Link href="/projects" className="btn-secondary">
-                View Case Studies
-              </Link>
-            </div>
+        {/* CTA Back */}
+        <div className="mt-16 pt-16 border-t border-zinc-800 text-center">
+          <p className="text-zinc-400 mb-6">Not ready for audit? Explore other options:</p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Link href="/project-brief" className="btn-secondary">
+              Send Project Brief
+            </Link>
+            <Link href="/projects" className="btn-secondary">
+              View Case Studies
+            </Link>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
