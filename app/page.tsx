@@ -274,7 +274,22 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5 max-w-6xl mx-auto">
+            {/* Project Brief (Primary) */}
+            <Link
+              href="/project-brief"
+              className="card group hover:border-blue-500/50 transition-all bg-gradient-to-br from-blue-500/10 to-purple-500/5 lg:col-span-2"
+            >
+              <div className="text-3xl mb-4">📋</div>
+              <h3 className="font-semibold text-white mb-2">Send Project Brief</h3>
+              <p className="text-sm text-zinc-400 mb-4 flex-grow">
+                Share details & get proposal in 24h
+              </p>
+              <p className="text-xs text-blue-400 group-hover:text-blue-300 font-medium">
+                Start here →
+              </p>
+            </Link>
+
             {/* Email */}
             <a
               href="mailto:mamcbt@gmail.com"
@@ -283,7 +298,7 @@ export default function Home() {
               <div className="text-3xl mb-4">📧</div>
               <h3 className="font-semibold text-white mb-2">Email</h3>
               <p className="text-sm text-zinc-400 mb-4 flex-grow">
-                For detailed project inquiries
+                Quick questions
               </p>
               <p className="text-xs text-blue-400 group-hover:text-blue-300">
                 mamcbt@gmail.com →
@@ -300,7 +315,7 @@ export default function Home() {
               <div className="text-3xl mb-4">💬</div>
               <h3 className="font-semibold text-white mb-2">WhatsApp</h3>
               <p className="text-sm text-zinc-400 mb-4 flex-grow">
-                Quick conversations & updates
+                Chat anytime
               </p>
               <p className="text-xs text-green-400 group-hover:text-green-300">
                 +91 8590 841024 →
@@ -315,27 +330,27 @@ export default function Home() {
               className="card group hover:border-purple-500/50 transition-all"
             >
               <div className="text-3xl mb-4">📅</div>
-              <h3 className="font-semibold text-white mb-2">Schedule Call</h3>
+              <h3 className="font-semibold text-white mb-2">Call</h3>
               <p className="text-sm text-zinc-400 mb-4 flex-grow">
-                15-minute quick chat
+                15-min discussion
               </p>
               <p className="text-xs text-purple-400 group-hover:text-purple-300">
-                Book on Calendly →
+                Book now →
               </p>
             </a>
 
             {/* Free Audit */}
             <a
               href="/free-audit"
-              className="card group hover:border-yellow-500/50 transition-all bg-gradient-to-br from-blue-500/5 to-purple-500/5"
+              className="card group hover:border-yellow-500/50 transition-all"
             >
               <div className="text-3xl mb-4">🎯</div>
               <h3 className="font-semibold text-white mb-2">Free Audit</h3>
               <p className="text-sm text-zinc-400 mb-4 flex-grow">
-                30-min project assessment
+                30-min assessment
               </p>
               <p className="text-xs text-yellow-400 group-hover:text-yellow-300 font-medium">
-                Start free audit →
+                Apply free →
               </p>
             </a>
           </div>
