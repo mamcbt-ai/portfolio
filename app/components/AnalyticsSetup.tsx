@@ -15,7 +15,7 @@ declare global {
 export function Analytics() {
   useEffect(() => {
     // Initialize GA4
-    const GA_ID = 'G-XXXXXXXXXX'; // Replace with your GA4 ID
+    const GA_ID = 'G-KGX9V99MHK'; // HODOPHILE Portfolio GA4 ID
 
     // Load GA4 script
     const script = document.createElement('script');
