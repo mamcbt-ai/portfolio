@@ -7,8 +7,8 @@ import { useEffect } from 'react';
 
 declare global {
   interface Window {
-    gtag: (command: string, id?: string, options?: Record<string, unknown>) => void;
-    dataLayer: Array<Record<string, unknown>>;
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
   }
 }
 
@@ -25,12 +25,11 @@ export function Analytics() {
 
     // Initialize gtag
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args: unknown[]) {
-      window.dataLayer.push(args as Record<string, unknown>);
-    }
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', GA_ID);
+    window.gtag = function gtag(...args: unknown[]) {
+      (window.dataLayer as unknown[]).push(args);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
 
     // Track page views
     trackEvent('page_view', {
