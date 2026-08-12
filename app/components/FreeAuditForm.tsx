@@ -14,6 +14,7 @@ interface FormData {
 }
 
 export default function FreeAuditForm() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
