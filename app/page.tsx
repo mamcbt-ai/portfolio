@@ -4,6 +4,7 @@ import StatsSection from "./components/StatsSection";
 import TechStackShowcase from "./components/TechStackShowcase";
 import PricingSection from "./components/PricingSection";
 import ProcessSection from "./components/ProcessSection";
+import FreeAuditForm from "./components/FreeAuditForm";
 
 export default function Home() {
   const featuredProjects = projects.filter((p) => p.featured);
@@ -197,6 +198,50 @@ export default function Home() {
 
       {/* How I Work / Process Section */}
       <ProcessSection />
+
+      {/* Free Audit Section */}
+      <section className="relative section-padding border-b border-zinc-800/50">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl"></div>
+        </div>
+        <div className="container-max max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="heading-md mb-6">Free 30-Minute Technical Audit</h2>
+            <p className="text-lg text-zinc-300 mb-4">
+              Share your project details and I'll provide 3-5 actionable recommendations within 24 hours.
+            </p>
+          </div>
+
+          <div className="grid gap-12 md:grid-cols-3">
+            {/* Form */}
+            <div className="md:col-span-2">
+              <FreeAuditForm />
+            </div>
+
+            {/* Benefits */}
+            <div className="space-y-6">
+              <div className="card">
+                <h3 className="font-semibold text-white mb-3">What You Get</h3>
+                <ul className="space-y-2 text-sm text-zinc-400">
+                  <li>✓ Technical review</li>
+                  <li>✓ 3-5 recommendations</li>
+                  <li>✓ Action plan</li>
+                  <li>✓ Within 24 hours</li>
+                </ul>
+              </div>
+              <div className="card">
+                <h3 className="font-semibold text-white mb-3">Who Benefits</h3>
+                <ul className="space-y-2 text-sm text-zinc-400">
+                  <li>✓ Early founders</li>
+                  <li>✓ Tech teams</li>
+                  <li>✓ Product builders</li>
+                  <li>✓ Scaling startups</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* All Projects CTA */}
       <section className="relative section-padding border-b border-zinc-800/50">
