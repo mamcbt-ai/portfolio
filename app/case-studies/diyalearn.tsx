@@ -81,7 +81,7 @@ export default function DiyaLearnCaseStudy() {
               <div className="card">
                 <h3 className="font-semibold text-white mb-3">Backend (FastAPI)</h3>
                 <p className="text-sm text-zinc-400">
-                  Groq LLM integration for <2s response latency, speech-to-text via Google Speech API, multilingual support, learning analytics, progress tracking.
+                  Groq LLM integration for &lt;2s response latency, speech-to-text via Google Speech API, multilingual support, learning analytics, progress tracking.
                 </p>
               </div>
 
