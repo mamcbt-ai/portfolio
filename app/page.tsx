@@ -369,7 +369,7 @@ export default function Home() {
 
             {/* Calendar */}
             <a
-              href="https://calendly.com/mamcbt"
+              href="https://calendly.com/mamcbt/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="card group hover:border-purple-500/50 transition-all"
