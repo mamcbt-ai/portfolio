@@ -352,7 +352,7 @@ export default function Home() {
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/918590841024"
+              href="https://wa.me/919797420566"
               target="_blank"
               rel="noopener noreferrer"
               className="card group hover:border-green-500/50 transition-all"
@@ -363,7 +363,7 @@ export default function Home() {
                 Chat anytime
               </p>
               <p className="text-xs text-green-400 group-hover:text-green-300">
-                +91 8590 841024 →
+                +91 9797420566 →
               </p>
             </a>
 
