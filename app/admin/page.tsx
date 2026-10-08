@@ -24,6 +24,11 @@ function LoginForm({ error }: { error: boolean }) {
   );
 }
 
+function gmailCompose(to: string, subject: string, body: string) {
+  const params = new URLSearchParams({ view: 'cm', fs: '1', to, su: subject, body });
+  return `https://mail.google.com/mail/?${params.toString()}`;
+}
+
 function Row({ label, value }: { label: string; value: unknown }) {
   if (value === undefined || value === null || value === '') return null;
   return (
@@ -46,7 +51,14 @@ function SubmissionCard({ item }: { item: Submission }) {
         </span>
       </div>
       <h3 className="font-semibold text-white">{item.name}</h3>
-      <p className="text-sm text-blue-400">{item.email}</p>
+      <a
+        href={gmailCompose(item.email, 'Re: Your free project audit request', `Hi ${item.name},\n\n`)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sm text-blue-400 hover:underline"
+      >
+        {item.email}
+      </a>
       <Row label="Company" value={d.company} />
       <Row label="Phone" value={d.phone} />
       <Row label="Project type" value={d.projectType} />
@@ -57,40 +69,68 @@ function SubmissionCard({ item }: { item: Submission }) {
       <p className="whitespace-pre-wrap text-sm text-zinc-400">
         {String(d.description ?? d.projectDescription ?? '')}
       </p>
-      <a href={`mailto:${item.email}`} className="btn-secondary text-sm inline-block">
-        Reply by email
+      <a
+        href={gmailCompose(item.email, 'Re: Your free project audit request', `Hi ${item.name},\n\n`)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-secondary text-sm inline-block"
+      >
+        Reply in Gmail
       </a>
     </div>
   );
 }
 
+type Filter = 'all' | 'audit' | 'brief';
+
+const FILTERS: { key: Filter; label: string }[] = [
+  { key: 'all', label: 'All' },
+  { key: 'audit', label: 'Free Audits' },
+  { key: 'brief', label: 'Project Briefs' },
+];
+
 export default async function AdminPage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string }>;
+  searchParams: Promise<{ error?: string; type?: string }>;
 }) {
   const jar = await cookies();
   const authed = isAdminSession(jar.get('admin_session')?.value);
-  const { error } = await searchParams;
+  const { error, type } = await searchParams;
 
   if (!authed) {
     return <LoginForm error={error === '1'} />;
   }
 
-  let items: Submission[] = [];
+  const filter: Filter = type === 'audit' || type === 'brief' ? type : 'all';
+
+  let all: Submission[] = [];
   let loadError = false;
   try {
-    items = await listSubmissions();
+    all = await listSubmissions();
   } catch (e) {
     console.error('Admin load failed:', e);
     loadError = true;
   }
+
+  const items = filter === 'all' ? all : all.filter((s) => s.type === filter);
 
   return (
     <div className="container-max section-padding space-y-8">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <h1 className="heading-md">Submissions ({items.length})</h1>
         <a href="/api/admin/login" className="btn-secondary text-sm">Log out</a>
+      </div>
+      <div className="flex flex-wrap gap-3">
+        {FILTERS.map((f) => (
+          <a
+            key={f.key}
+            href={f.key === 'all' ? '/admin' : `/admin?type=${f.key}`}
+            className={`badge text-xs ${filter === f.key ? 'ring-2 ring-blue-400' : ''}`}
+          >
+            {f.label} ({f.key === 'all' ? all.length : all.filter((s) => s.type === f.key).length})
+          </a>
+        ))}
       </div>
       {loadError && (
         <p className="text-red-400">
