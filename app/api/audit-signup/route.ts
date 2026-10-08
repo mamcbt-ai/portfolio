@@ -34,8 +34,13 @@ async function sendEmail(to: string, subject: string, html: string) {
 
 export async function POST(request: NextRequest) {
   try {
-    const body: AuditSignupData = await request.json();
-    const { name, email, projectDescription, industry } = body;
+    const body = await request.json();
+    const name: string = body.name;
+    const email: string = body.email;
+    const projectDescription: string = body.projectDescription || body.description;
+    const industry: string =
+      body.industry ||
+      [body.company, body.projectType].filter(Boolean).join(' - ');
 
     // Validate required fields
     if (!name || !email || !projectDescription) {
@@ -99,19 +104,23 @@ export async function POST(request: NextRequest) {
       </div>
     `;
 
-    // Send confirmation email to user
-    await sendEmail(
-      email,
-      'Free Project Audit - Application Confirmed ✅',
-      userConfirmationHTML
-    );
-
-    // Send notification to owner
+    // Send notification to owner first so it always goes out
     await sendEmail(
       OWNER_EMAIL,
       `New Free Audit Signup: ${name}`,
       ownerNotificationHTML
     );
+
+    // Send confirmation to client; a failure here must not fail the signup
+    try {
+      await sendEmail(
+        email,
+        'Free Project Audit - Application Confirmed ✅',
+        userConfirmationHTML
+      );
+    } catch (confirmError) {
+      console.error('Client confirmation email failed:', confirmError);
+    }
 
     return NextResponse.json(
       {
