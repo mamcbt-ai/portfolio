@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
     // Send confirmation email to user
     const userConfirmationHTML = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #1e293b;">Thanks for applying, ${name}! 🎯</h2>
+        <h2 style="color: #1e293b;">Thanks for applying, ${name}!</h2>
         <p style="color: #64748b; font-size: 16px; line-height: 1.6;">
           I've received your submission for a free project audit. I'm excited to review your project and help you identify quick wins and architectural improvements.
         </p>
@@ -107,7 +107,7 @@ export async function POST(request: NextRequest) {
     // Send notification email to owner
     const ownerNotificationHTML = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #1e293b;">New Free Audit Signup 🎯</h2>
+        <h2 style="color: #1e293b;">New Free Audit Signup</h2>
         <p style="color: #64748b;">
           <strong>Name:</strong> ${name}<br>
           <strong>Email:</strong> ${email}<br>
@@ -129,7 +129,7 @@ export async function POST(request: NextRequest) {
     try {
       await sendEmail(
         email,
-        'Free Project Audit - Application Confirmed ✅',
+        'Free Project Audit - Application Confirmed',
         userConfirmationHTML
       );
     } catch (confirmError) {

@@ -1,12 +1,22 @@
 'use client';
 
+import type { IconType } from 'react-icons';
+import { LuTarget, LuWrench, LuZap, LuRocket, LuCheck } from 'react-icons/lu';
+
 export default function ProcessSection() {
-  const steps = [
+  const steps: {
+    number: string;
+    title: string;
+    duration: string;
+    Icon: IconType;
+    description: string;
+    points: string[];
+  }[] = [
     {
       number: "1",
       title: "Discovery",
       duration: "Week 1",
-      icon: "🎯",
+      Icon: LuTarget,
       description: "Understand your problem, define success metrics, and align on scope & timeline.",
       points: [
         "Deep-dive conversation about goals",
@@ -18,7 +28,7 @@ export default function ProcessSection() {
       number: "2",
       title: "Architecture",
       duration: "Week 2",
-      icon: "🛠️",
+      Icon: LuWrench,
       description: "Design system architecture, select tech stack, and assess technical risks.",
       points: [
         "System design documentation",
@@ -30,7 +40,7 @@ export default function ProcessSection() {
       number: "3",
       title: "Build",
       duration: "Weeks 3-6",
-      icon: "⚡",
+      Icon: LuZap,
       description: "Iterative development with weekly progress updates and your feedback integrated.",
       points: [
         "Frequent feature shipping",
@@ -42,7 +52,7 @@ export default function ProcessSection() {
       number: "4",
       title: "Launch & Scale",
       duration: "Week 7+",
-      icon: "🚀",
+      Icon: LuRocket,
       description: "Testing, optimization, deployment assistance, and 30-day post-launch support.",
       points: [
         "Testing & optimization",
@@ -86,7 +96,9 @@ export default function ProcessSection() {
                 </div>
 
                 {/* Icon */}
-                <div className="text-4xl mb-4 text-center">{step.icon}</div>
+                <div className="mb-4 flex justify-center">
+                  <step.Icon className="h-10 w-10 text-blue-400" aria-hidden="true" />
+                </div>
 
                 {/* Title & Duration */}
                 <h3 className="text-xl font-bold text-white mb-1 text-center">
@@ -105,7 +117,7 @@ export default function ProcessSection() {
                 <ul className="space-y-2">
                   {step.points.map((point, j) => (
                     <li key={j} className="text-xs text-zinc-400 flex items-start">
-                      <span className="text-blue-400 mr-2 mt-0.5">→</span>
+                      <LuCheck className="text-blue-400 mr-2 mt-0.5 shrink-0" aria-hidden="true" />
                       <span>{point}</span>
                     </li>
                   ))}
@@ -125,7 +137,7 @@ export default function ProcessSection() {
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 flex items-center justify-center mb-4">
                     <span className="font-bold gradient-text">{step.number}</span>
                   </div>
-                  <div className="text-2xl">{step.icon}</div>
+                  <step.Icon className="h-7 w-7 text-blue-400" aria-hidden="true" />
                   {i < steps.length - 1 && (
                     <div className="w-0.5 h-12 bg-gradient-to-b from-blue-500/50 to-transparent mt-4"></div>
                   )}
@@ -145,7 +157,7 @@ export default function ProcessSection() {
                   <ul className="space-y-2">
                     {step.points.map((point, j) => (
                       <li key={j} className="text-xs text-zinc-400 flex items-start">
-                        <span className="text-blue-400 mr-2 mt-0.5">✓</span>
+                        <LuCheck className="text-blue-400 mr-2 mt-0.5 shrink-0" aria-hidden="true" />
                         <span>{point}</span>
                       </li>
                     ))}

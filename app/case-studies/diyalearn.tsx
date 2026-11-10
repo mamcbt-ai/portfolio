@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { LuTarget, LuLightbulb, LuTrendingUp, LuWrench, LuZap, LuGlobe } from 'react-icons/lu';
 
 export const metadata = {
   title: 'DiyaLearn AI - Full-Stack AI Learning Platform',
@@ -49,7 +50,7 @@ export default function DiyaLearnCaseStudy() {
         {/* Problem */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">🎯 The Problem</h2>
+            <h2 className="text-2xl font-bold text-white mb-4"><LuTarget className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />The Problem</h2>
             <p className="text-zinc-300 leading-relaxed mb-4">
               India has 50M+ students, but educational access remains deeply unequal. English-only platforms exclude non-English speakers. Existing solutions are:
             </p>
@@ -65,7 +66,7 @@ export default function DiyaLearnCaseStudy() {
         {/* Solution */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">💡 The Solution</h2>
+            <h2 className="text-2xl font-bold text-white mb-4"><LuLightbulb className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />The Solution</h2>
             <p className="text-zinc-300 leading-relaxed mb-6">
               Built a full-stack AI learning platform with voice-first interface supporting 17 Indian languages. The app adapts to student level, provides doubt-solving via voice/text/image, and includes complete exam prep.
             </p>
@@ -98,7 +99,7 @@ export default function DiyaLearnCaseStudy() {
         {/* Outcome */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">📈 The Outcome</h2>
+            <h2 className="text-2xl font-bold text-white mb-4"><LuTrendingUp className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />The Outcome</h2>
             <p className="text-zinc-300 leading-relaxed mb-6">
               DiyaLearn is now live and actively used by learners across India. Weekly feature shipping. Real metrics:
             </p>
@@ -135,7 +136,7 @@ export default function DiyaLearnCaseStudy() {
         {/* Tech Stack */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-6">🛠️ Tech Stack</h2>
+            <h2 className="text-2xl font-bold text-white mb-6"><LuWrench className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />Tech Stack</h2>
             <div className="grid gap-4 md:grid-cols-3">
               <div>
                 <p className="font-semibold text-white mb-3">Frontend</p>
@@ -168,7 +169,7 @@ export default function DiyaLearnCaseStudy() {
         {/* What Made It Work */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-6">⚡ What Made It Work</h2>
+            <h2 className="text-2xl font-bold text-white mb-6"><LuZap className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />What Made It Work</h2>
             <div className="space-y-4">
               <div className="border-l-2 border-blue-500 pl-6">
                 <h3 className="font-semibold text-white mb-2">1. Voice-First Design</h3>
@@ -201,7 +202,7 @@ export default function DiyaLearnCaseStudy() {
         {/* Live Link */}
         <section className="space-y-6 mb-16 p-8 bg-blue-500/10 border border-blue-500/20 rounded-lg">
           <div>
-            <h3 className="font-semibold text-white mb-4">🌐 Live App</h3>
+            <h3 className="font-semibold text-white mb-4"><LuGlobe className="inline h-5 w-5 mr-2 text-blue-400" aria-hidden="true" />Live App</h3>
             <p className="text-zinc-300 mb-6">
               DiyaLearn is live and actively being used by learners across India. Try it out:
             </p>

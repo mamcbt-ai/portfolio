@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
     // Send confirmation email to user
     const userConfirmationHTML = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #1e293b;">Project Brief Received, ${name}! 📋</h2>
+        <h2 style="color: #1e293b;">Project Brief Received, ${name}!</h2>
         <p style="color: #64748b; font-size: 16px; line-height: 1.6;">
           Thanks for sharing your project details. I've received your brief and will review it carefully.
         </p>
@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
     // Send notification email to owner
     const ownerNotificationHTML = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #1e293b;">New Project Brief 📋</h2>
+        <h2 style="color: #1e293b;">New Project Brief</h2>
         <p style="color: #64748b;">
           <strong>Client Name:</strong> ${name}<br>
           <strong>Email:</strong> ${email}<br>
@@ -140,7 +140,7 @@ export async function POST(request: NextRequest) {
     try {
       await sendEmail(
         email,
-        'Project Brief Received ✅',
+        'Project Brief Received',
         userConfirmationHTML
       );
     } catch (confirmError) {

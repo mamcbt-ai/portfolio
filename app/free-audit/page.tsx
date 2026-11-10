@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import FreeAuditForm from '@/app/components/FreeAuditForm';
+import { LuCheck } from 'react-icons/lu';
 
 export const metadata = {
   title: 'Free Technical Audit - HODOPHILE',
@@ -37,19 +38,19 @@ export default function FreeAuditPage() {
               <h3 className="font-semibold text-white mb-4">What's Included</h3>
               <ul className="space-y-3 text-sm text-zinc-400">
                 <li className="flex gap-3">
-                  <span className="text-blue-400">✓</span>
+                  <LuCheck className="text-blue-400" aria-hidden="true" />
                   <span>30-minute technical review</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-blue-400">✓</span>
+                  <LuCheck className="text-blue-400" aria-hidden="true" />
                   <span>3-5 actionable recommendations</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-blue-400">✓</span>
+                  <LuCheck className="text-blue-400" aria-hidden="true" />
                   <span>Prioritized action plan</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-blue-400">✓</span>
+                  <LuCheck className="text-blue-400" aria-hidden="true" />
                   <span>Next steps to implement</span>
                 </li>
               </ul>
@@ -74,10 +75,10 @@ export default function FreeAuditPage() {
             <div className="p-6 bg-zinc-900/50 border border-zinc-800/50 rounded-lg">
               <h3 className="font-semibold text-white mb-4">Who Should Apply</h3>
               <ul className="space-y-2 text-sm text-zinc-400">
-                <li>✓ Early-stage founders</li>
-                <li>✓ Product teams evaluating tech</li>
-                <li>✓ Projects needing second opinion</li>
-                <li>✓ Teams scaling rapidly</li>
+                <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Early-stage founders</li>
+                <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Product teams evaluating tech</li>
+                <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Projects needing second opinion</li>
+                <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Teams scaling rapidly</li>
               </ul>
             </div>
           </div>

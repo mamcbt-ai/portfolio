@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { trackAuditApplication } from '@/app/components/AnalyticsSetup';
+import { LuCircleCheck } from 'react-icons/lu';
 
 interface FormData {
   name: string;
@@ -57,7 +58,7 @@ export default function FreeAuditForm() {
   if (isSubmitted) {
     return (
       <div className="p-8 bg-green-500/10 border border-green-500/20 rounded-lg">
-        <h3 className="text-xl font-bold text-white mb-4">✅ Application Received!</h3>
+        <h3 className="text-xl font-bold text-white mb-4"><span className="inline-flex items-center gap-2"><LuCircleCheck className="text-green-400" aria-hidden="true" />Application Received!</span></h3>
         <p className="text-zinc-300 mb-4">
           Thank you for applying. I'll review your project and send you a detailed audit report with recommendations within 24 hours.
         </p>

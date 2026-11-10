@@ -5,6 +5,19 @@ import TechStackShowcase from "./components/TechStackShowcase";
 import PricingSection from "./components/PricingSection";
 import ProcessSection from "./components/ProcessSection";
 import FreeAuditForm from "./components/FreeAuditForm";
+import {
+  LuRocket,
+  LuSettings,
+  LuSparkles,
+  LuTarget,
+  LuLightbulb,
+  LuTrendingUp,
+  LuCheck,
+  LuClipboardList,
+  LuMail,
+  LuCalendarDays,
+} from "react-icons/lu";
+import { SiWhatsapp } from "react-icons/si";
 
 export default function Home() {
   const featuredProjects = projects.filter((p) => p.featured);
@@ -23,7 +36,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="inline-block">
               <div className="badge mb-6">
-                ✨ Full-Stack Developer & AI Pioneer
+                Full-Stack Developer & AI Pioneer
               </div>
             </div>
             <h1 className="heading-lg">
@@ -55,19 +68,19 @@ export default function Home() {
             {[
               {
                 title: "Full-Stack Web Apps",
-                icon: "🚀",
+                icon: LuRocket,
                 description:
                   "End-to-end applications with Next.js, React, FastAPI, and Supabase. From MVP to scalable production systems.",
               },
               {
                 title: "Backend & API Systems",
-                icon: "⚙️",
+                icon: LuSettings,
                 description:
                   "Scalable FastAPI backends, database architecture, REST APIs, authentication, and business logic design.",
               },
               {
                 title: "AI-Powered Features",
-                icon: "✨",
+                icon: LuSparkles,
                 description:
                   "LLM integrations, RAG systems, multilingual workflows, voice AI, OCR, and ML pipelines for real products.",
               },
@@ -79,7 +92,7 @@ export default function Home() {
               >
                 <div className="icon-wrapper mb-6 group-hover:mb-8 transition-all">
                   <span className="text-3xl group-hover:scale-110 transition-transform duration-300 inline-block">
-                    {service.icon}
+                    <service.icon className="h-8 w-8 text-blue-400 inline-block" aria-hidden="true" />
                   </span>
                 </div>
                 <h3 className="mb-3 font-bold text-white text-lg group-hover:text-blue-300 transition-colors">
@@ -130,15 +143,15 @@ export default function Home() {
                     {/* Problem / Solution / Result */}
                     <div className="space-y-4 text-sm pt-4">
                       <div className="rounded-lg border border-zinc-700/50 bg-zinc-900/30 p-4 backdrop-blur">
-                        <p className="font-semibold text-zinc-200 mb-2">🎯 Problem</p>
+                        <p className="font-semibold text-zinc-200 mb-2"><span className="flex items-center gap-2"><LuTarget className="text-blue-400" aria-hidden="true" />Problem</span></p>
                         <p className="text-zinc-400">{project.problem}</p>
                       </div>
                       <div className="rounded-lg border border-zinc-700/50 bg-zinc-900/30 p-4 backdrop-blur">
-                        <p className="font-semibold text-zinc-200 mb-2">💡 Solution</p>
+                        <p className="font-semibold text-zinc-200 mb-2"><span className="flex items-center gap-2"><LuLightbulb className="text-blue-400" aria-hidden="true" />Solution</span></p>
                         <p className="text-zinc-400">{project.solution}</p>
                       </div>
                       <div className="rounded-lg border border-zinc-700/50 bg-zinc-900/30 p-4 backdrop-blur">
-                        <p className="font-semibold text-zinc-200 mb-2">📈 Result</p>
+                        <p className="font-semibold text-zinc-200 mb-2"><span className="flex items-center gap-2"><LuTrendingUp className="text-blue-400" aria-hidden="true" />Result</span></p>
                         <p className="text-zinc-400">{project.result}</p>
                       </div>
                     </div>
@@ -223,19 +236,19 @@ export default function Home() {
               <div className="card">
                 <h3 className="font-semibold text-white mb-3">What You Get</h3>
                 <ul className="space-y-2 text-sm text-zinc-400">
-                  <li>✓ Technical review</li>
-                  <li>✓ 3-5 recommendations</li>
-                  <li>✓ Action plan</li>
-                  <li>✓ Within 24 hours</li>
+                  <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Technical review</li>
+                  <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />3-5 recommendations</li>
+                  <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Action plan</li>
+                  <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Within 24 hours</li>
                 </ul>
               </div>
               <div className="card">
                 <h3 className="font-semibold text-white mb-3">Who Benefits</h3>
                 <ul className="space-y-2 text-sm text-zinc-400">
-                  <li>✓ Early founders</li>
-                  <li>✓ Tech teams</li>
-                  <li>✓ Product builders</li>
-                  <li>✓ Scaling startups</li>
+                  <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Early founders</li>
+                  <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Tech teams</li>
+                  <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Product builders</li>
+                  <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Scaling startups</li>
                 </ul>
               </div>
             </div>
@@ -273,23 +286,23 @@ export default function Home() {
               <p className="font-semibold text-zinc-100 mb-4">Focused on:</p>
               <ul className="grid gap-2 ml-6 text-base">
                 <li className="flex items-start">
-                  <span className="mr-3">✓</span>
+                  <LuCheck className="mr-3 mt-1 shrink-0 text-blue-400" aria-hidden="true" />
                   <span>Next.js and React applications</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3">✓</span>
+                  <LuCheck className="mr-3 mt-1 shrink-0 text-blue-400" aria-hidden="true" />
                   <span>FastAPI and backend architecture</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3">✓</span>
+                  <LuCheck className="mr-3 mt-1 shrink-0 text-blue-400" aria-hidden="true" />
                   <span>Supabase and PostgreSQL systems</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3">✓</span>
+                  <LuCheck className="mr-3 mt-1 shrink-0 text-blue-400" aria-hidden="true" />
                   <span>AI integrations, multilingual workflows, and voice features</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3">✓</span>
+                  <LuCheck className="mr-3 mt-1 shrink-0 text-blue-400" aria-hidden="true" />
                   <span>Product-focused MVPs that can grow into production systems</span>
                 </li>
               </ul>
@@ -325,7 +338,7 @@ export default function Home() {
               href="/project-brief"
               className="card group hover:border-blue-500/50 transition-all bg-gradient-to-br from-blue-500/10 to-purple-500/5 lg:col-span-2"
             >
-              <div className="text-3xl mb-4">📋</div>
+              <div className="h-8 w-8 text-blue-400 mb-4" aria-hidden="true"><LuClipboardList /></div>
               <h3 className="font-semibold text-white mb-2">Send Project Brief</h3>
               <p className="text-sm text-zinc-400 mb-4 flex-grow">
                 Share details & get proposal in 24h
@@ -340,7 +353,7 @@ export default function Home() {
               href="mailto:mamcbt@gmail.com"
               className="card group hover:border-blue-500/50 transition-all"
             >
-              <div className="text-3xl mb-4">📧</div>
+              <LuMail className="h-8 w-8 text-blue-400 mb-4" aria-hidden="true" />
               <h3 className="font-semibold text-white mb-2">Email</h3>
               <p className="text-sm text-zinc-400 mb-4 flex-grow">
                 Quick questions
@@ -357,7 +370,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="card group hover:border-green-500/50 transition-all"
             >
-              <div className="text-3xl mb-4">💬</div>
+              <SiWhatsapp className="h-8 w-8 text-green-400 mb-4" aria-hidden="true" />
               <h3 className="font-semibold text-white mb-2">WhatsApp</h3>
               <p className="text-sm text-zinc-400 mb-4 flex-grow">
                 Chat anytime
@@ -374,7 +387,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="card group hover:border-purple-500/50 transition-all"
             >
-              <div className="text-3xl mb-4">📅</div>
+              <LuCalendarDays className="h-8 w-8 text-purple-400 mb-4" aria-hidden="true" />
               <h3 className="font-semibold text-white mb-2">Call</h3>
               <p className="text-sm text-zinc-400 mb-4 flex-grow">
                 15-min discussion
@@ -389,7 +402,7 @@ export default function Home() {
               href="/free-audit"
               className="card group hover:border-yellow-500/50 transition-all"
             >
-              <div className="text-3xl mb-4">🎯</div>
+              <LuTarget className="h-8 w-8 text-yellow-400 mb-4" aria-hidden="true" />
               <h3 className="font-semibold text-white mb-2">Free Audit</h3>
               <p className="text-sm text-zinc-400 mb-4 flex-grow">
                 30-min assessment

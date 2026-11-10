@@ -1,5 +1,62 @@
 'use client';
 
+import type { IconType } from 'react-icons';
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiVercel,
+  SiFastapi,
+  SiPython,
+  SiPostgresql,
+  SiSupabase,
+  SiLangchain,
+  SiGit,
+  SiDocker,
+  SiGithub,
+  SiLinux,
+} from 'react-icons/si';
+import {
+  LuServer,
+  LuBrainCircuit,
+  LuDatabase,
+  LuZap,
+  LuLock,
+  LuSmartphone,
+  LuBot,
+  LuCode,
+} from 'react-icons/lu';
+
+const techIcons: Record<string, IconType> = {
+  React: SiReact,
+  'Next.js': SiNextdotjs,
+  TypeScript: SiTypescript,
+  'Tailwind CSS': SiTailwindcss,
+  Vercel: SiVercel,
+  FastAPI: SiFastapi,
+  Python: SiPython,
+  PostgreSQL: SiPostgresql,
+  Supabase: SiSupabase,
+  'REST APIs': LuServer,
+  LLMs: LuBrainCircuit,
+  'RAG Systems': LuDatabase,
+  LangChain: SiLangchain,
+  OpenAI: LuBot,
+  Groq: LuZap,
+  Git: SiGit,
+  Docker: SiDocker,
+  GitHub: SiGithub,
+  'VS Code': LuCode,
+  Linux: SiLinux,
+};
+
+const quickFacts: { Icon: IconType; text: string; desc: string }[] = [
+  { Icon: LuZap, text: 'Optimized Performance', desc: '90+ PageSpeed scores' },
+  { Icon: LuLock, text: 'Security-First', desc: 'Best practices always' },
+  { Icon: LuSmartphone, text: 'Mobile-Ready', desc: 'Works on all devices' },
+];
+
 export default function TechStackShowcase() {
   const techStack = {
     Frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
@@ -36,17 +93,23 @@ export default function TechStackShowcase() {
                 {category}
               </h3>
               <div className="space-y-2">
-                {techs.map((tech, techIdx) => (
-                  <div
-                    key={tech}
-                    className="badge w-full justify-center py-2 cursor-pointer hover:scale-105 transition-transform"
-                    style={{
-                      animation: `bounce-in 0.5s ease-out ${categoryIdx * 0.1 + techIdx * 0.05}s backwards`,
-                    }}
-                  >
-                    ✦ {tech}
-                  </div>
-                ))}
+                {techs.map((tech, techIdx) => {
+                  const Icon = techIcons[tech];
+                  return (
+                    <div
+                      key={tech}
+                      className="badge w-full justify-center py-2 cursor-pointer hover:scale-105 transition-transform"
+                      style={{
+                        animation: `bounce-in 0.5s ease-out ${categoryIdx * 0.1 + techIdx * 0.05}s backwards`,
+                      }}
+                    >
+                      <span className="inline-flex items-center gap-2">
+                        {Icon && <Icon className="h-4 w-4" aria-hidden="true" />}
+                        {tech}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
@@ -54,20 +117,17 @@ export default function TechStackShowcase() {
 
         {/* Quick Facts - Professional cards */}
         <div className="mt-20 grid gap-8 md:grid-cols-3">
-          {[
-            { emoji: '⚡', text: 'Optimized Performance', desc: '90+ PageSpeed scores' },
-            { emoji: '🔒', text: 'Security-First', desc: 'Best practices always' },
-            { emoji: '📱', text: 'Mobile-Ready', desc: 'Works on all devices' },
-          ].map((fact, i) => (
+          {quickFacts.map((fact, i) => (
             <div
               key={i}
               className="card group flex flex-col items-center text-center hover:shadow-xl"
               style={{ animationDelay: `${i * 0.15}s` }}
             >
               <div className="icon-wrapper mb-6 group-hover:mb-8 transition-all">
-                <span className="text-2xl group-hover:scale-110 transition-transform duration-300 inline-block">
-                  {fact.emoji}
-                </span>
+                <fact.Icon
+                  className="h-7 w-7 text-blue-400 group-hover:scale-110 transition-transform duration-300"
+                  aria-hidden="true"
+                />
               </div>
               <h4 className="font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
                 {fact.text}

@@ -1,10 +1,22 @@
 'use client';
 
+import type { IconType } from 'react-icons';
+import { LuLightbulb, LuSettings, LuRocket, LuCheck } from 'react-icons/lu';
+
 export default function PricingSection() {
-  const packages = [
+  const packages: {
+    title: string;
+    Icon: IconType;
+    startPrice: string;
+    endPrice: string;
+    timeline: string;
+    features: string[];
+    cta: string;
+    ctaColor: string;
+  }[] = [
     {
       title: "AI Feature Integration",
-      icon: "💡",
+      Icon: LuLightbulb,
       startPrice: "$2.5K",
       endPrice: "$5K",
       timeline: "2-3 weeks",
@@ -19,7 +31,7 @@ export default function PricingSection() {
     },
     {
       title: "Backend & API Systems",
-      icon: "⚙️",
+      Icon: LuSettings,
       startPrice: "$3K",
       endPrice: "$8K",
       timeline: "3-4 weeks",
@@ -34,7 +46,7 @@ export default function PricingSection() {
     },
     {
       title: "Full-Stack Product Build",
-      icon: "🚀",
+      Icon: LuRocket,
       startPrice: "$5K",
       endPrice: "$15K+",
       timeline: "Custom",
@@ -72,7 +84,7 @@ export default function PricingSection() {
             >
               {/* Icon */}
               <div className="mb-6">
-                <div className="text-4xl">{pkg.icon}</div>
+                <pkg.Icon className="h-10 w-10 text-blue-400" aria-hidden="true" />
               </div>
 
               {/* Title */}
@@ -94,7 +106,7 @@ export default function PricingSection() {
               <ul className="space-y-3 mb-8 flex-grow">
                 {pkg.features.map((feature, j) => (
                   <li key={j} className="flex items-start text-sm text-zinc-300">
-                    <span className="text-blue-400 mr-3 mt-0.5">✓</span>
+                    <LuCheck className="text-blue-400 mr-3 mt-0.5 shrink-0" aria-hidden="true" />
                     <span>{feature}</span>
                   </li>
                 ))}
