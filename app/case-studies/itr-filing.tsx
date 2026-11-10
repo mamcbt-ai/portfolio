@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { LuTarget, LuLightbulb, LuTrendingUp, LuWrench, LuZap } from 'react-icons/lu';
 
 export const metadata = {
   title: 'ITR Filing Platform - Complete India Tax Return System',
@@ -49,7 +50,7 @@ export default function ITRFilingCaseStudy() {
         {/* Problem */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">🎯 The Problem</h2>
+            <h2 className="text-2xl font-bold text-white mb-4"><LuTarget className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />The Problem</h2>
             <p className="text-zinc-300 leading-relaxed mb-4">
               India has 10M+ individual taxpayers, but ITR filing remains complex and error-prone:
             </p>
@@ -65,7 +66,7 @@ export default function ITRFilingCaseStudy() {
         {/* Solution */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">💡 The Solution</h2>
+            <h2 className="text-2xl font-bold text-white mb-4"><LuLightbulb className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />The Solution</h2>
             <p className="text-zinc-300 leading-relaxed mb-6">
               Built a complete FastAPI backend with 8 specialized engines to handle ITR preparation end-to-end. Each engine focuses on one critical function.
             </p>
@@ -105,7 +106,7 @@ export default function ITRFilingCaseStudy() {
         {/* Outcome */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">📈 The Outcome</h2>
+            <h2 className="text-2xl font-bold text-white mb-4"><LuTrendingUp className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />The Outcome</h2>
             <p className="text-zinc-300 leading-relaxed mb-6">
               Production-ready platform with comprehensive test coverage and real-world validation:
             </p>
@@ -142,7 +143,7 @@ export default function ITRFilingCaseStudy() {
         {/* Tech Stack */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-6">🛠️ Tech Stack</h2>
+            <h2 className="text-2xl font-bold text-white mb-6"><LuWrench className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />Tech Stack</h2>
             <div className="grid gap-4 md:grid-cols-3">
               <div>
                 <p className="font-semibold text-white mb-3">Backend</p>
@@ -175,7 +176,7 @@ export default function ITRFilingCaseStudy() {
         {/* What Made It Work */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-6">⚡ What Made It Work</h2>
+            <h2 className="text-2xl font-bold text-white mb-6"><LuZap className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />What Made It Work</h2>
             <div className="space-y-4">
               <div className="border-l-2 border-blue-500 pl-6">
                 <h3 className="font-semibold text-white mb-2">1. Specialized Engines</h3>

@@ -2,6 +2,7 @@
 
 import { useState, FormEvent, ChangeEvent } from 'react';
 import Link from 'next/link';
+import { LuCheck, LuCircleCheck, LuLightbulb } from 'react-icons/lu';
 
 interface BriefFormData {
   name: string;
@@ -70,7 +71,7 @@ export default function ProjectBriefForm() {
   if (submitted) {
     return (
       <div className="space-y-8 text-center py-16">
-        <div className="text-6xl mb-6">✅</div>
+        <LuCircleCheck className="h-16 w-16 text-green-400 mx-auto mb-6" aria-hidden="true" />
         <h2 className="heading-md">Brief Received</h2>
         <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
           Thanks for the project brief. I've received your details and will review them carefully.
@@ -80,10 +81,10 @@ export default function ProjectBriefForm() {
             <strong>Next steps:</strong>
           </p>
           <ul className="text-sm text-zinc-400 space-y-2">
-            <li>✓ I'll review your project details (within 24 hours)</li>
-            <li>✓ Clarify any requirements or constraints</li>
-            <li>✓ Send you a detailed proposal with timeline & cost</li>
-            <li>✓ Schedule a kickoff call if everything aligns</li>
+            <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />I'll review your project details (within 24 hours)</li>
+            <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Clarify any requirements or constraints</li>
+            <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Send you a detailed proposal with timeline & cost</li>
+            <li className="flex items-center gap-2"><LuCheck className="text-blue-400" aria-hidden="true" />Schedule a kickoff call if everything aligns</li>
           </ul>
         </div>
         <p className="text-sm text-zinc-400">
@@ -265,7 +266,7 @@ export default function ProjectBriefForm() {
         {/* Disclaimer */}
         <div className="p-4 bg-zinc-900/50 border border-zinc-700/50 rounded-lg">
           <p className="text-xs text-zinc-400">
-            💡 <strong>How I use this:</strong> I review every brief carefully and send a detailed proposal within 24 hours. This brief helps me understand scope, timeline, and fit before we schedule a call.
+            <LuLightbulb className="inline h-5 w-5 mr-2 text-blue-400 align-text-bottom" aria-hidden="true" /><strong>How I use this:</strong> I review every brief carefully and send a detailed proposal within 24 hours. This brief helps me understand scope, timeline, and fit before we schedule a call.
           </p>
         </div>
 

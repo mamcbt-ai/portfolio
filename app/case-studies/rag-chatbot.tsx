@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { LuTarget, LuLightbulb, LuTrendingUp, LuWrench, LuZap, LuMonitor } from 'react-icons/lu';
 
 export const metadata = {
   title: 'RAG PDF Chatbot - Intelligent Document Search System',
@@ -49,7 +50,7 @@ export default function RAGChatbotCaseStudy() {
         {/* Problem */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">🎯 The Problem</h2>
+            <h2 className="text-2xl font-bold text-white mb-4"><LuTarget className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />The Problem</h2>
             <p className="text-zinc-300 leading-relaxed mb-4">
               Knowledge workers spend hours manually searching through PDFs and scanned documents:
             </p>
@@ -65,7 +66,7 @@ export default function RAGChatbotCaseStudy() {
         {/* Solution */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">💡 The Solution</h2>
+            <h2 className="text-2xl font-bold text-white mb-4"><LuLightbulb className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />The Solution</h2>
             <p className="text-zinc-300 leading-relaxed mb-6">
               Built a Streamlit-based RAG (Retrieval-Augmented Generation) system that understands both keyword and semantic meaning. Works with text PDFs and scanned documents.
             </p>
@@ -105,7 +106,7 @@ export default function RAGChatbotCaseStudy() {
         {/* Outcome */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">📈 The Outcome</h2>
+            <h2 className="text-2xl font-bold text-white mb-4"><LuTrendingUp className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />The Outcome</h2>
             <p className="text-zinc-300 leading-relaxed mb-6">
               Working production app supporting mixed PDF types, fast queries, and source verification:
             </p>
@@ -142,7 +143,7 @@ export default function RAGChatbotCaseStudy() {
         {/* Tech Stack */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-6">🛠️ Tech Stack</h2>
+            <h2 className="text-2xl font-bold text-white mb-6"><LuWrench className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />Tech Stack</h2>
             <div className="grid gap-4 md:grid-cols-3">
               <div>
                 <p className="font-semibold text-white mb-3">Frontend & App</p>
@@ -175,7 +176,7 @@ export default function RAGChatbotCaseStudy() {
         {/* What Made It Work */}
         <section className="space-y-6 mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-6">⚡ What Made It Work</h2>
+            <h2 className="text-2xl font-bold text-white mb-6"><LuZap className="inline h-6 w-6 mr-2 text-blue-400" aria-hidden="true" />What Made It Work</h2>
             <div className="space-y-4">
               <div className="border-l-2 border-blue-500 pl-6">
                 <h3 className="font-semibold text-white mb-2">1. Hybrid Search Strategy</h3>
@@ -208,7 +209,7 @@ export default function RAGChatbotCaseStudy() {
         {/* Live Link */}
         <section className="space-y-6 mb-16 p-8 bg-blue-500/10 border border-blue-500/20 rounded-lg">
           <div>
-            <h3 className="font-semibold text-white mb-4">💻 Live Demo</h3>
+            <h3 className="font-semibold text-white mb-4"><LuMonitor className="inline h-5 w-5 mr-2 text-blue-400" aria-hidden="true" />Live Demo</h3>
             <p className="text-zinc-300 mb-6">
               Try the RAG chatbot. Upload any PDF (text or scanned) and ask questions:
             </p>

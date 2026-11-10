@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import { LuStar, LuCheck, LuRocket, LuEye } from "react-icons/lu";
 
 export const metadata = {
   title: "Projects",
@@ -56,7 +57,7 @@ export default function ProjectsPage() {
                       {project.featured && (
                         <div className="mb-5">
                           <span className="inline-block px-3 py-1.5 text-xs font-bold text-amber-300 bg-gradient-to-r from-amber-500/25 to-orange-500/15 border border-amber-500/40 rounded-lg">
-                            ⭐ Featured
+                            <LuStar className="inline h-3.5 w-3.5 mr-1" aria-hidden="true" />Featured
                           </span>
                         </div>
                       )}
@@ -79,7 +80,7 @@ export default function ProjectsPage() {
                         <ul className="mb-6 space-y-2 text-xs text-zinc-300">
                           {project.highlights.slice(0, 3).map((highlight, i) => (
                             <li key={i} className="flex gap-2">
-                              <span className="text-blue-400 font-bold mt-0.5 group-hover:text-purple-400 transition-colors">✓</span>
+                              <span className="text-blue-400 font-bold mt-0.5 group-hover:text-purple-400 transition-colors"><LuCheck aria-hidden="true" /></span>
                               <span>{highlight}</span>
                             </li>
                           ))}
@@ -112,14 +113,14 @@ export default function ProjectsPage() {
                             rel="noopener noreferrer"
                             className="text-xs btn-secondary py-2 px-4 flex-1 text-center"
                           >
-                            🚀 Live
+                            <LuRocket className="inline h-4 w-4 mr-1" aria-hidden="true" />Live
                           </a>
                         )}
                         <Link
                           href={`/#featured-projects`}
                           className="text-xs btn-secondary py-2 px-4 flex-1 text-center"
                         >
-                          👁️ Details
+                          <LuEye className="inline h-4 w-4 mr-1" aria-hidden="true" />Details
                         </Link>
                       </div>
                     </div>

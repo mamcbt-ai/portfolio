@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navigation from "./components/Navigation";
+import { LuMail } from "react-icons/lu";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -96,7 +98,7 @@ export default function RootLayout({
                         href="mailto:mamcbt@gmail.com"
                         className="text-sm text-zinc-400 transition-all duration-300 hover:text-white hover:translate-x-1 inline-block"
                       >
-                        ✉️ Email
+                        <span className="inline-flex items-center gap-2"><LuMail className="h-4 w-4" aria-hidden="true" />Email</span>
                       </a>
                     </li>
                     <li>
@@ -106,7 +108,7 @@ export default function RootLayout({
                         rel="noopener noreferrer"
                         className="text-sm text-zinc-400 transition-all duration-300 hover:text-white hover:translate-x-1 inline-block"
                       >
-                        💻 GitHub
+                        <span className="inline-flex items-center gap-2"><SiGithub className="h-4 w-4" aria-hidden="true" />GitHub</span>
                       </a>
                     </li>
                     <li>
@@ -116,7 +118,7 @@ export default function RootLayout({
                         rel="noopener noreferrer"
                         className="text-sm text-zinc-400 transition-all duration-300 hover:text-white hover:translate-x-1 inline-block"
                       >
-                        💼 LinkedIn
+                        <span className="inline-flex items-center gap-2"><SiLinkedin className="h-4 w-4" aria-hidden="true" />LinkedIn</span>
                       </a>
                     </li>
                   </ul>
