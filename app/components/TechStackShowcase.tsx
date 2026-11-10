@@ -12,11 +12,9 @@ import {
   SiPostgresql,
   SiSupabase,
   SiLangchain,
-  SiOpenai,
   SiGit,
   SiDocker,
   SiGithub,
-  SiVisualstudiocode,
   SiLinux,
 } from 'react-icons/si';
 import {
@@ -26,6 +24,8 @@ import {
   LuZap,
   LuLock,
   LuSmartphone,
+  LuBot,
+  LuCode,
 } from 'react-icons/lu';
 
 const techIcons: Record<string, IconType> = {
@@ -42,12 +42,12 @@ const techIcons: Record<string, IconType> = {
   LLMs: LuBrainCircuit,
   'RAG Systems': LuDatabase,
   LangChain: SiLangchain,
-  OpenAI: SiOpenai,
+  OpenAI: LuBot,
   Groq: LuZap,
   Git: SiGit,
   Docker: SiDocker,
   GitHub: SiGithub,
-  'VS Code': SiVisualstudiocode,
+  'VS Code': LuCode,
   Linux: SiLinux,
 };
 

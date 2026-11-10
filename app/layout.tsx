@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navigation from "./components/Navigation";
 import { LuMail } from "react-icons/lu";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { SiGithub } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -118,7 +119,7 @@ export default function RootLayout({
                         rel="noopener noreferrer"
                         className="text-sm text-zinc-400 transition-all duration-300 hover:text-white hover:translate-x-1 inline-block"
                       >
-                        <span className="inline-flex items-center gap-2"><SiLinkedin className="h-4 w-4" aria-hidden="true" />LinkedIn</span>
+                        <span className="inline-flex items-center gap-2"><FaLinkedin className="h-4 w-4" aria-hidden="true" />LinkedIn</span>
                       </a>
                     </li>
                   </ul>
