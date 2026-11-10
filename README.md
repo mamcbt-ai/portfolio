@@ -27,6 +27,9 @@ This portfolio demonstrates:
 
 ## Featured Projects
 
+### [GrowthPilot AI](https://growthpilot-ai-murex.vercel.app)
+AI growth workspace for local businesses: AI proposes, people approve, and the app records what was actually used. Live as an early pilot.
+
 ### [DiyaLearn AI](https://github.com/azar-asr/diyalearn-ai)
 AI-powered educational platform with multilingual support, voice tutoring, and adaptive learning workflows.
 
