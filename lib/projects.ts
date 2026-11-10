@@ -16,6 +16,43 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "growthpilot",
+    title: "GrowthPilot AI",
+    tagline:
+      "AI growth workspace for local businesses: AI proposes, people approve, the app records what actually happened",
+    description:
+      "A multi-tenant SaaS that turns a business goal into an AI plan and marketing drafts (Google Business posts, service pages, ads, emails, WhatsApp templates). An owner or admin approves each one, records where it was actually used, and shares a Growth Ledger and Proof Pack. Live in production as an early pilot.",
+    problem:
+      "Small businesses can get AI-written text easily, but not the structure around it: priorities are unclear, drafts go out without a decision, and nobody can show what was actually done. Tools that auto-post or promise results make owners lose trust.",
+    solution:
+      "Built a Next.js + FastAPI + Supabase app where the model only proposes and the server authorizes. Plans and drafts stay proposals until an owner or admin approves them, roles and workspace isolation are enforced in the API, every change is logged, and nothing is posted, sent or spent automatically. Includes a leads pipeline with follow-up reminders, a read-only website audit with evidence, keyword ideas, and a Google account connection with a daily health check.",
+    result:
+      "Live in production as an early pilot, with a public in-browser demo that uses labelled sample data. 548 API tests and 114 web tests run in CI on every pull request. Lighthouse lab scores: 100 for accessibility, best practices and SEO. Metrics show \"Not enough data\" instead of made-up numbers.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "Supabase",
+      "PostgreSQL",
+      "OpenAI",
+      "Vercel",
+      "Railway",
+    ],
+    category: "AI/SaaS",
+    featured: true,
+    liveUrl: "https://growthpilot-ai-murex.vercel.app",
+    highlights: [
+      "Human approval enforced by the server, not the AI",
+      "Workspace isolation: other businesses' data returns 404",
+      "Growth Ledger and Proof Pack (PDF or Markdown)",
+      "Content Studio with versions, locations and languages",
+      "Leads pipeline, follow-up reminders, approved-only emails",
+      "Read-only website audit with evidence for each finding",
+      "Interactive demo that runs entirely in the browser",
+    ],
+  },
+  {
     id: "diyalearn",
     title: "DiyaLearn AI",
     tagline: "AI-powered learning platform for accessible, adaptive, multilingual education",

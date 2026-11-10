@@ -296,7 +296,7 @@ export default function Home() {
             </div>
             <p className="text-lg pt-4">
               A disciplined, execution-first approach shapes the way products are designed, built, and shipped.
-              Currently building AI-powered educational tools and exploring practical SaaS and fintech workflows.
+              Currently building GrowthPilot AI, a growth workspace for local businesses, alongside AI-powered educational tools and practical fintech workflows.
             </p>
           </div>
         </div>
